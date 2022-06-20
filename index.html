@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="/images/logo_text.png">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Demo2_Dasboard_Nuvio</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon"><img src="/images/logo_text.png" alt="LOGO" width="100"></span>
+                        <span class="title erp">ERP Gestioun</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="title">Clientes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
+                        <span class="title">Financeiro</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
+                        <span class="title">Drop Down</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
+                        <span class="title">Suporte</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><ion-icon name="cloud-circle-outline"></ion-icon></span>
+                        <span class="title">NuvioMain</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Principal -->
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <!-- Pesquisa -->
+                <div class="pesquisa">
+                    <label>
+                        <input type="text" placeholder="Pesquise aqui">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                <!-- Usuário IMG -->
+                <div class="user">
+                    <img src="/images/user.jpg" alt="foto1">
+                </div>
+            </div>
+
+            <!-- Cartões -->
+
+            <div class="cardsBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,504</div>
+                        <div class="cardName">Visitas Diárias</div>
+                    </div>
+                    <div class="iconBox">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Vendas de Planos</div>
+                    </div>
+                    <div class="iconBox">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">284</div>
+                        <div class="cardName">Comentários *Clientes</div>
+                    </div>
+                    <div class="iconBox">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">$7,842</div>
+                        <div class="cardName">Lucro Semanal</div>
+                    </div>
+                    <div class="iconBox">
+                        <ion-icon name="cash-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista de Detalhes -->
+
+            <div class="details">
+                <div class="ordemRecente">
+                    <div class="cardHeader">
+                        <h2>Clientes Novos</h2>
+                        <a href="#" class="btn">Ver todos</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Nome</td>
+                                <td>Plano</td>
+                                <td>Pagamento</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+
+        // Menu toggle
+        let toggle = document.querySelector('.toggle');
+        let nav = document.querySelector('.nav');
+        let main = document.querySelector('.main');
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle('ativo');
+            main.classList.toggle('ativo');
+        })
+
+        // Lista supensa da nav
+        let list = document.querySelectorAll('.nav li');
+        function ativaLink() {
+            list.forEach((item) =>
+            item.classList.remove('pairar'));
+            this.classList.add('pairar');
+        }
+        list.forEach((item) =>
+        item.addEventListener('mouseover', ativaLink));
+
+    </script>
+
+</body>
+</html>
