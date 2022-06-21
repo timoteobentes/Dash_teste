@@ -269,9 +269,256 @@ body {
     z-index: 10;
 }
 
-
 .cardsBox .card:hover .numbers,
 .cardsBox .card:hover .cardName,
 .cardsBox .card:hover .iconBox {
     color: var(--white);
+}
+
+.details {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    /* margin-top: 10px; */
+}
+
+.details .ordemRecente {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader h2 {
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.btn {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+}
+
+.details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.details table thead td {
+    font-weight: 600;
+}
+
+
+.details .ordemRecente table tr {
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .ordemRecente table tr:last-child {
+    border-bottom: none;
+}
+.details .ordemRecente table tbody tr:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.details .ordemRecente table tr td {
+    padding: 10px;
+}
+
+.details .ordemRecente table tr td:last-child {
+    text-align: end;
+}
+
+.details .ordemRecente table tr td:nth-child(2) {
+    text-align: end;
+}
+
+.details .ordemRecente table tr td:nth-child(3) {
+    text-align: center;
+}
+
+.status.entregue {
+    padding: 1px 2px;
+    background: #8de02c;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.pendente {
+    padding: 1px 2px;
+    background: #f9ca3f;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.retorno {
+    padding: 1px 2px;
+    background: #f00;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.andamento {
+    padding: 1px 2px;
+    background: #1795ce;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.clientesRecentes {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.clientesRecentes .imgBx {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.clientesRecentes .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.clientesRecentes table tr:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.clientesRecentes table tr td {
+    padding: 12px 10px;
+}
+
+.clientesRecentes table tr td h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+.clientesRecentes table tr td h4 span {
+    font-size: 14px;
+    color: var(--black2);
+}
+
+.clientesRecentes table tr:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.clientesRecentes table tr:hover td h4 span {
+    color: var(--white);
+}
+
+/* Responsividade */
+
+@media (max-width: 991px) {
+    .nav {
+        left: -300px;
+    }
+
+    .nav.ativo {
+        width: 100%;
+        left: 0;
+    }
+
+    .main {
+        width: 100%;
+        left: 0;
+    }
+
+    .main.ativo {
+        left: 300px;
+    }
+
+    .cardsBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .details {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .ordemRecente {
+        overflow-x: auto;
+    }
+
+    .status.andamento {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480) {
+    .cardsBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cardHeader h2 {
+        font-size: 20px;
+    }
+
+    .user {
+        min-width: 40px;
+    }
+
+    .nav {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .nav.ativo {
+        width: 100;
+        left: 0;
+    }
+
+    .toggle {
+        z-index: 10001;
+    }
+
+    .main.ativo .toggle {
+        position: fixed;
+        right: 0;
+        left: initial;
+        color: var(--white);
+    }
 }
